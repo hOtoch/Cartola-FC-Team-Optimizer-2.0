@@ -1,0 +1,85 @@
+Para jogadores ofensivos:
+
+score_final = x1 * media + x2 * finalizaçoes_concluidas + x3 * previsao_de_gol_ou_assistencia
+
+finalizaçoes_concluidas = y1 * finalizacoes_no_gol + y2 * finalizacoes_para_fora
+
+previsao_de_gol_ou_assistencia = p1 * qtd_gols_jogador_marcou + p2 * qtd_gols_time_marcou + p3 * qtd_gols_adversario_tomou + p4 * qtd_assistencia_jogador_deu
+
+x1 = 0.5
+x2 = 0.2
+x3 = 0.3
+
+y1 = 0.8
+y2 = 0.2
+
+p1 = 0.4
+p2 = 0.2
+p3 = 0.3
+p4 = 0.1
+
+Para jogadores de meio:
+
+score_final = x1 * media + x2 * finalizaçoes_concluidas + x3 * previsao_de_gol_ou_assistencia + x4 * qtd_desarmes
+
+finalizaçoes_concluidas = y1 * finalizacoes_no_gol + y2 * finalizacoes_para_fora
+
+previsao_de_gol_ou_assistencia = p1 * qtd_gols_jogador_marcou + p2 * qtd_gols_time_marcou + p3 * qtd_gols_adversario_tomou + p4 * qtd_assistencia_jogador_deu
+
+x1 = 0.3
+x2 = 0.2
+x3 = 0.3
+x4 = 0.2
+
+y1 = 0.8
+y2 = 0.2
+
+p1 = 0.4
+p2 = 0.2
+p3 = 0.3
+p4 = 0.1
+
+Para jogadores zagueiros e laterais
+
+score_final = x1 * media + x2 * finalizaçoes_concluidas + x3 * previsao_de_gol_ou_assistencia + x4 * qtd_desarmes + x5 * previsao_de_saldo_de_gol
+
+finalizaçoes_concluidas = y1 * finalizacoes_no_gol + y2 * finalizacoes_para_fora
+
+previsao_de_saldo_de_gol = k1 * qtd_jogos_time_nao_tomou_gol + k2 * qtd_jogos_jogador_nao_tomou_gol + k3 * qtd_jogos_adversario_nao_fez_gol
+
+previsao_de_gol_ou_assistencia = p1 * qtd_gols_jogador_marcou + p2 * qtd_gols_time_marcou + p3 * qtd_gols_adversario_tomou + p4 * qtd_assistencia_jogador_deu
+
+x1 = 0.3
+x2 = 0.1
+x3 = 0.1
+x4 = 0.2
+x5 = 0.3
+
+y1 = 0.8
+y2 = 0.2
+
+k1 = 0.4
+k2 = 0.4
+k3 = 0.2
+
+p1 = 0.2
+p2 = 0.3
+p3 = 0.3
+p4 = 0.2
+
+Para jogadores goleiros
+
+score_final = x1 * media + x2 * qtd_defesas + x3 * previsao_de_saldo_de_gol + x4 * penalidade_por_gol_sofrido + x5 * qtd_penaltis_defendidos
+
+previsao_de_saldo_de_gol = k1 * qtd_jogos_time_nao_tomou_gol + k2 * qtd_jogos_goleiro_nao_tomou_gol + k3 * qtd_jogos_adversario_nao_fez_gol
+
+x1 = 0.3 (peso da média do goleiro)
+x2 = 0.3 (peso das defesas feitas)
+x3 = 0.2 (peso da previsão de saldo de gol)
+x4 = 0.1 (peso para gols sofridos)
+x5 = 0.3 (peso dos pênaltis defendidos)
+
+k1 = 0.4 (peso de jogos em que o time não tomou gol)
+k2 = 0.4 (peso de jogos em que o goleiro não tomou gol)
+k3 = 0.2 (peso de jogos em que o adversário não fez gol)
+
