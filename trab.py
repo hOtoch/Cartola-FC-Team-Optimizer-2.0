@@ -1,7 +1,20 @@
 import requests
 import json as json
+import pandas as pd
 import gurobipy as gp
 from gurobipy import GRB
+
+url_table = "https://api.football-data.org/v4/competitions/BSA/standings?season=2024"
+
+headers = {
+  'X-Auth-Token': 'cede0c34a4a54ca4a4bfe9bdd942b518',
+}
+
+response = requests.request("GET", url, headers=headers)
+
+table = response.json()['standings'][0]['table']
+
+df_table = pd.DataFrame(table)
 
 # Passo 1: Obter dados da API do Cartola FC
 url_atletas = "https://api.cartolafc.globo.com/atletas/mercado"
